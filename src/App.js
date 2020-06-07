@@ -1,65 +1,25 @@
 import React from "react"
-
+import Text from "./Text";
+import Timer from "./Timer";
 
 function App() {
-    const [sayi1, setSayi1] = React.useState(0);
-    const [sayi2, setSayi2] = React.useState(0);
-    const [sonuc, setSonuc] = React.useState(0);
+    const [state, setState] = React.useState(false);
 
-
-    function onSayi1Change(e) {
-        setSayi1(parseInt(e.target.value));
-    }
-
-    function onSayi2Change(e) {
-        setSayi2(parseInt(e.target.value));
-    }
-
-    function onToplaClick() {
-        setSonuc(sayi1 + sayi2);
-    }
-
-    function onCarpClick(){
-        setSonuc(sayi1 * sayi2)
-    }
-
-    function onBolmeClick() {
-        setSonuc(sayi1 / sayi2)
-    }
-
-    function onCikartClick(){
-        setSonuc(sayi1 - sayi2)
-    }
+    const onStateChange = () => {
+        setState(!state);
+    };
 
     return (
-        <table>
-            <tbody>
-            <tr>
-                <td>Sayı 1:</td>
-                <td>
-                    <input value={sayi1} onChange={onSayi1Change} />
-                </td>
-            </tr>
-            <tr>
-                <td>Sayı 2:</td>
-                <td>
-                    <input value={sayi2} onChange={onSayi2Change} />
-                </td>
-            </tr>
-            <tr>
-                <td colSpan={2}>
-                    <button onClick={onToplaClick}>topla</button>
-                    <button onClick={onCikartClick}>çıkart</button>
-                    <button onClick={onCarpClick}>çarp</button>
-                    <button onClick={onBolmeClick}>böl</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Sonuç</td>
-                <td>{sonuc}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div>
+            <Text color={state ? "blue" : "red"} value="Hello"/>
+            <Text color={state ? "red" : "blue"} value="World"/>
+            <Timer/>
+            <Text color="orange">
+                <Text value="Hello"/>
+                <Text value="World"/>
+            </Text>
+        </div>
     )
 }
-export default App;
+
+export default App
