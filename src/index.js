@@ -1,9 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Calculator from "./App"
+import ProductList from "./pages/product/ProductList";
 
 
 ReactDOM.render(
-    <Calculator/>,
+    <ProductList/>,
     document.getElementById("myapp")
 );

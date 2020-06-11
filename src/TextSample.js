@@ -2,7 +2,7 @@ import React from "react"
 import Text from "./Text";
 import Timer from "./Timer";
 
-function App() {
+function TextSample() {
     const [state, setState] = React.useState(false);
 
     const onStateChange = () => {
@@ -22,4 +22,4 @@ function App() {
     )
 }
 
-export default App
+export default TextSample

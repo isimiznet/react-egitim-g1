@@ -2,13 +2,19 @@
   "name": "reactjs",
   "version": "1.0.0",
   "dependencies": {
+    "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1"
   },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.16.1"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "mock-api": "npx json-server test/mockData.js --port 1234"
   },
   "browserslist": {
     "production": [

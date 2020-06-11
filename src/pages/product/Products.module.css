@@ -1,0 +1,19 @@
+.products_container {
+    display: flex;
+    justify-content: center;
+}
+
+.product_list {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-auto-rows: auto;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.product_details {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    border: 1px solid orange;
+    padding: 10px;
+}
