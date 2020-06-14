@@ -22,20 +22,19 @@ function ProductList() {
         <div className={styles.products_container}>
             <div className={styles.product_list}>
                 {products.map(p => (
-                    <ProductDetails product={p} productName={XProductName}/>
+                    <ProductDetails product={p}/>
                 ))}
             </div>
         </div>
     )
 }
 
-function ProductDetails({product, productName}) {
-    const ProductName = productName;
+function ProductDetails({product}) {
     return (
         <div className={styles.product_details} key={product.id}>
-            <img height="100" src={product.image}/>
+            {/*<img height="100" src={product.image}/>*/}
             <span>
-                <ProductName value={product.productName}/>
+                <SimpleProductName value={product.productName}/>
             </span>
             <span>
                 <ProductPrice value={product.price}/>

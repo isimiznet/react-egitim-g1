@@ -1,0 +1,13 @@
+.menu {
+    background: darkorange;
+    color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_items {
+    width: 100%;
+    max-width: 1024px;
+}
