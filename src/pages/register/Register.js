@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./Register.module.css"
+import axios from "axios";
+import {useHistory} from "react-router";
 
 function Register() {
+    const history = useHistory();
     const [form, setForm] = React.useState({});
 
     const onInputChange = e => {
@@ -32,6 +35,21 @@ function Register() {
                 })
             }
         }
+    };
+
+    const onFormClick = () => {
+        if (!form.name) {
+            alert('Lütfen isim alanını giriniz.');
+            return;
+        }
+        if (!form.surname) {
+            alert('Lütfen soyisim alanını giriniz.');
+            return;
+        }
+        axios.post("http://localhost:1234/register", form).finally(() => {
+            alert('Kayıt işlemi başarılı');
+            history.push('/')
+        })
     };
 
     return (
@@ -81,6 +99,10 @@ function Register() {
                 <input name="hoby" type="checkbox" value="spor" onClick={onCheckboxClick}/>
                 SPOR
             </label>
+
+            <hr/>
+
+            <button onClick={onFormClick}>KAYIT OL</button>
 
             <hr/>
 

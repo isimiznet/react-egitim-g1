@@ -1,12 +1,12 @@
 import React from "react"
 import Text from "./Text";
 
-function Timer() {
+function Timer({step = 1}) {
     const [count, setCount] = React.useState(0);
 
     React.useEffect(() => {
         let handle = setInterval(() => {
-            setCount(state => state + 1)
+            setCount(state => state + step)
         }, 1000);
 
         return () => {
